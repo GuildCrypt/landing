@@ -1,0 +1,139 @@
+body {
+  background-color: #290B32;
+  color: white;
+  font-family: 'Abel', sans-serif;
+  padding-bottom: 80px;
+}
+
+a{
+  color: white;
+}
+a:hover {
+  color: white;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, .8);
+  font-size: 1em;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 2em;
+}
+
+.brand, h1, h2, h3, h4, .btn{
+  font-family: 'Nova Square', sans-serif;
+}
+
+#banner{
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+}
+#banner-image{
+  width: 100%;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  position: static;
+  opacity: .5;
+}
+#banner-overlay{
+  position: absolute;
+  font-size: 1.5em;
+  top: 200px;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.token-set{
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 4px dashed rgba(255, 255, 255, .2);
+  background-color: rgba(0, 0, 0, .2);
+}
+.token-set-details {
+  color:#aaa;
+  margin-bottom: 40px;
+}
+
+.table td{
+  padding:0;
+  border: 0;
+}
+
+.btn {
+  position: relative;
+  padding: 10px 30px;
+  margin-right: 10px;
+  z-index: 1;
+}
+
+.btn, .btn.active, .btn.active.focus, .btn.active:focus, .btn.active:hover, .btn:active, .btn:active.focus, .btn:active:focus, .btn:active:hover, .btn:focus, .btn:hover {
+  color: #fff;
+  text-decoration: none;
+  background: 0 0;
+  border: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn, .btn.active, .btn.active.focus, .btn.active:focus, .btn.active:hover, .btn:active, .btn:active.focus, .btn:active:focus, .btn:active:hover, .btn:focus, .btn:hover {
+    color: #fff;
+    text-decoration: none;
+    background: 0 0;
+    border: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: 0 0;
+  border: 2px solid #fff;
+  -webkit-transition: .3s background ease,.3s border ease;
+  -o-transition: .3s background ease,.3s border ease;
+  transition: .3s background ease,.3s border ease;
+  z-index: -1;
+}
+
+.btn-skew::before {
+  -webkit-transform: skew(-7deg);
+  -ms-transform: skew(-7deg);
+  transform: skew(-7deg);
+}
+
+.btn.active::before, .btn.focus::before, .btn:active::before, .btn:focus::before, .btn:hover::before, .open>.dropdown-toggle.btn::before {
+    background: #8E3D60;
+    border: 2px solid #8E3D60;
+}
+.carousel {
+  border: 4px dashed rgba(255, 255, 255, .2);
+}
+
+.carousel-inner{
+  padding: 4px;
+}
+
+.carousel-item{
+  height: 300px;
+  text-align: center;
+}
+
+.carousel-item img{
+  max-height: 100%;
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
