@@ -33,8 +33,6 @@ a:hover {
 }
 #banner-image{
   width: 100%;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
   position: static;
   opacity: .5;
 }
@@ -45,6 +43,14 @@ a:hover {
   padding: 20px;
   margin: 20px;
   background-color: rgba(0, 0, 0, .5);
+}
+#banner-feather{
+  box-shadow: 0 0 100px 0 #290B32, 0 0 100px 0 #290B32;
+  height: 100px;
+  width: 150%;
+  margin-left: -25%;
+  position: absolute;
+  bottom: -100px;
 }
 
 .token-set{
