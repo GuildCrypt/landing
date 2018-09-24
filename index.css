@@ -90,6 +90,9 @@ a:hover {
   border-top: 4px dashed rgba(255, 255, 255, .2);
   background-color: rgba(0, 0, 0, .2);
 }
+.token .btn {
+  margin-top: 10px;
+}
 .token-images {
   border: 4px dashed rgba(255, 255, 255, .2);
 }
@@ -208,6 +211,9 @@ a:hover {
   }
   .token-images .images {
     padding: 0px;
+  }
+  .token .btn {
+    width: 100%;
   }
 }
 
