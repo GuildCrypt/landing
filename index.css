@@ -228,4 +228,7 @@ a:hover {
   .token-btns-right{
     display: none;
   }
+  .token-details {
+    font-size: 10px;
+  }
 }
