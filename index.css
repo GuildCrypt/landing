@@ -93,6 +93,12 @@ a:hover {
 .token .btn {
   margin-top: 10px;
 }
+.token-btns-bottom {
+  display: none;
+}
+.token-btns-bottom .btn{
+  width: 100%;
+}
 .token-images {
   border: 4px dashed rgba(255, 255, 255, .2);
 }
@@ -212,9 +218,6 @@ a:hover {
   .token-images .images {
     padding: 0px;
   }
-  .token .btn {
-    width: 100%;
-  }
 }
 
 @media (max-width: 650px) {
@@ -229,5 +232,11 @@ a:hover {
   }
   #banner-overlay {
     top: 85px;
+  }
+  .token-btns-bottom{
+    display: block;
+  }
+  .token-btns-right{
+    display: none;
   }
 }
