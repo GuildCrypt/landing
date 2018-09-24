@@ -68,16 +68,13 @@ a:hover {
 #banner-overlay{
   position: absolute;
   font-size: 1.5em;
-  top: 200px;
+  top: 50%;
+  margin-top: -60px;
   padding: 20px;
   margin: 20px;
   background-color: rgba(0, 0, 0, .5);
 }
-@media (max-width: 800px) {
-  #banner-overlay {
-    top: 100px;
-  }
-}
+
 #banner-feather{
   box-shadow: 0 0 100px 0 #290B32, 0 0 100px 0 #290B32;
   height: 100px;
@@ -200,4 +197,31 @@ a:hover {
 .modal-dialog .btn.active::before, .modal-dialog .btn.focus::before, .modal-dialog  .btn:active::before, .modal-dialog  .btn:focus::before, .modal-dialog  .btn:hover::before {
   background: #eee;
   border: 2px solid black;
+}
+
+@media (max-width: 800px) {
+  #banner-overlay {
+    top: 100px;
+  }
+  .token-images {
+    border: none;
+  }
+  .token-images .images {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar-brand {
+    font-size: 2em;
+  }
+  .navbar-nav > li > a {
+    padding: 10px 5px;
+  }
+  #banner .btn {
+    display: none;
+  }
+  #banner-overlay {
+    top: 85px;
+  }
 }
