@@ -57,6 +57,7 @@ a:hover {
   padding-bottom: 43%;
   background-size: cover;
   background-position: center center;
+  min-height: 275px;
 }
 @media (min-width: 1200px) {
   #banner-wrapper {
