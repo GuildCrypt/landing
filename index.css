@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: #290B32;
+  background-color: #17061B;
   color: white;
   font-family: 'Abel', sans-serif;
   padding-bottom: 80px;
@@ -22,9 +22,10 @@ a:hover {
 
 .navbar {
   padding: 10px;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(59, 16, 69, .9);
   font-size: 1em;
   color: white;
+  border: none;
 }
 
 .navbar-brand {
@@ -86,10 +87,8 @@ a:hover {
 }
 
 .token{
-  margin-top: 40px;
   padding: 20px;
-  border-top: 4px dashed rgba(255, 255, 255, .2);
-  background-color: rgba(0, 0, 0, .2);
+  background-color: #290B32;
 }
 .token .btn {
   margin-top: 10px;
@@ -201,6 +200,12 @@ a:hover {
 .modal-dialog .btn.active::before, .modal-dialog .btn.focus::before, .modal-dialog  .btn:active::before, .modal-dialog  .btn:focus::before, .modal-dialog  .btn:hover::before {
   background: #eee;
   border: 2px solid black;
+}
+
+@media (max-width: 1200px) {
+  body {
+    background-color: #290B32;
+  }
 }
 
 @media (max-width: 800px) {
