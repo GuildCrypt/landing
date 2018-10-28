@@ -73,12 +73,22 @@ app.directive('token', function (modal) {
     templateUrl: './templates/token.html',
     link: function ($scope) {
 
-      $scope.openTokenizerModal = function openTokenizerModal() {
+      $scope.openTokenizerModal = () => {
         modal.open($scope.token.tokenizer.data.name, $scope.token.tokenizer.data.info)
       }
 
-      $scope.openTokenLegalModal = function openTokenizerModal() {
+      $scope.openTokenLegalModal = () => {
         modal.open(`${$scope.token.data.name} - Terms and Conditions`, $scope.token.data.legal)
+      }
+
+      $scope.startRedemption = () => {
+        if (!window.ethereum) {
+          alert('No Ethereum client detected. Install an Ethereum client such as Metamask')
+          return
+        }
+        return window.ethereum.enable().then((...args) => {
+          console.log(args)
+        })
       }
     }
   }
