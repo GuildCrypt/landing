@@ -82,12 +82,8 @@ app.directive('token', function (modal) {
       }
 
       $scope.startRedemption = () => {
-        if (!window.ethereum) {
-          alert('No Ethereum client detected. Install an Ethereum client such as Metamask')
-          return
-        }
-        return window.ethereum.enable().then((...args) => {
-          console.log(args)
+        getWeb3().then((web3) => {
+          alert('web3')
         })
       }
     }
