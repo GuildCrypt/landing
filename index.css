@@ -6,7 +6,6 @@ body {
   background-color: #17061B;
   color: white;
   font-family: 'Abel', sans-serif;
-  padding-bottom: 80px;
 }
 
 a{
@@ -16,13 +15,18 @@ a:hover {
   color: white;
 }
 
+footer {
+  background-color: #3B1045;
+  margin-top:30px;
+}
+
 [ng-click] {
   cursor: pointer;
 }
 
 .navbar {
   padding: 10px;
-  background-color: rgba(59, 16, 69, 1);
+  background-color: #3B1045;
   font-size: 1em;
   color: white;
   border: none;
@@ -208,6 +212,10 @@ a:hover {
 .modal-dialog .btn.active::before, .modal-dialog .btn.focus::before, .modal-dialog  .btn:active::before, .modal-dialog  .btn:focus::before, .modal-dialog  .btn:hover::before {
   background: #eee;
   border: 2px solid black;
+}
+
+.contact {
+  padding: 15px 0;
 }
 
 @media (max-width: 1200px) {
