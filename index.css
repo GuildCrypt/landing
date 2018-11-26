@@ -22,10 +22,11 @@ a:hover {
 
 .navbar {
   padding: 10px;
-  background-color: rgba(59, 16, 69, .9);
+  background-color: rgba(59, 16, 69, 1);
   font-size: 1em;
   color: white;
   border: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 .navbar-brand {
@@ -96,8 +97,15 @@ a:hover {
 .token-btns-bottom {
   display: none;
 }
+
 .token-btns-bottom .btn{
-  width: 100%;
+  width: calc(100% - 30px);
+  margin: 15px 15px 0 15px;
+}
+
+.token-divider {
+  width: calc(100% - 30px);
+  margin: 15px;
 }
 
 .images{
@@ -208,13 +216,10 @@ a:hover {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   #banner-overlay {
     top: 100px;
   }
-}
-
-@media (max-width: 650px) {
   .navbar-brand {
     font-size: 2em;
   }

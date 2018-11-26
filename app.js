@@ -17,6 +17,12 @@ function Token(data) {
   this.tokenizer = _.find(tokenizers, (tokenizer) => {
     return tokenizer.data.address == data.tokenizerAddress
   })
+  this.imageUrls = this.data.imageUrls.map((imageUrl) => {
+    return `./assets/images/${this.data.id}/${imageUrl}`
+  })
+  this.buyUrl = 'https://opensea.io/'
+  this.redeemUrl = 'https://guildcrypt.github.io/redemption-form/'
+  this.termsUrl = `./assets/terms/${this.data.id}.pdf`
 }
 
 const tokens = [
@@ -27,7 +33,7 @@ const tokens = [
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
-    images: ['./assets/cards/black-lotus/front.jpg', './assets/cards/black-lotus/back.jpg'],
+    imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   }),
@@ -38,7 +44,7 @@ const tokens = [
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
-    images: ['./assets/cards/mox-jet/front.jpg', './assets/cards/mox-jet/back.jpg'],
+    imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   }),
@@ -49,7 +55,7 @@ const tokens = [
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
-    images: ['./assets/cards/ancestral-recall/front.jpg', './assets/cards/ancestral-recall/back.jpg'],
+    imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   })
@@ -86,14 +92,26 @@ app.directive('token', function (modal) {
           alert('web3')
         })
       }
+      $scope.watch = () => {
+        modal.open(`${$scope.token.data.name} - Watch`, $scope.token.data.legal)
+      }
     }
+  }
+})
+
+app.directive('tokenButtons', function () {
+  return {
+    scope: {
+      token: '=tokenButtons'
+  },
+    templateUrl: './templates/token-buttons.html',
   }
 })
 
 app.directive('images', function () {
   return {
     scope: {
-      images: '='
+      imageUrls: '=images'
     },
     templateUrl: './templates/images.html',
     link: function ($scope) {

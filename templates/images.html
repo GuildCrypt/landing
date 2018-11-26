@@ -1,6 +1,6 @@
 <div class="images">
-  <a class="image" ng-style="{ 'background-image': 'url(' + images[index] + ')'}" ng-href="{{images[index]}}" target="_blank"></a>
+  <a class="image" ng-style="{ 'background-image': 'url(' + imageUrls[index] + ')'}" ng-href="{{imageUrls[index]}}" target="_blank"></a>
   <div class="image-selectors">
-    <div ng-repeat="image in images" class="image-selector" ng-class="index == $index ? 'image-selector-selected' : ''" ng-click="$parent.index = $index"></div>
+    <div ng-repeat="imageUrl in imageUrls" class="image-selector" ng-class="index == $index ? 'image-selector-selected' : ''" ng-click="$parent.index = $index"></div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="container token">
   <div class="row">
     <div class="col-xs-5 col-sm-3">
-      <div class="token-images" images="token.data.images"></div>
+      <div class="token-images" images="token.imageUrls"></div>
     </div>
     <div class="col-xs-7 col-sm-9">
       <h4>{{token.data.name}}</h4>
@@ -22,18 +22,14 @@
           </tr>
         </table>
       </div>
-      <div class="token-btns-right">
-        <a class="btn btn-primary" ng-click="openTokenLegalModal()">Terms and Conditions</a>
-        <a class="btn btn-primary" href="https://etherdelta.com">Buy on EtherDelta</a>
-        <a class="btn btn-primary" ng-click="startRedemption()">Start Redemption</a>
+      <div token-buttons="token" class="token-btns-right"></div>
       </div>
     </div>
   </div>
   <div class="row token-btns-bottom">
     <div class="col-xs-12">
-      <a class="btn btn-primary" ng-click="openTokenLegalModal()">Terms and Conditions</a>
-      <a class="btn btn-primary" href="https://etherdelta.com">Buy on EtherDelta</a>
-      <a class="btn btn-primary" ng-click="startRedemption()">Start Redemption</a>
+      <div token-buttons="token"></div>
+      <hr class="token-divider"/>
     </div>
   </div>
 </div>
