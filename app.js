@@ -21,7 +21,7 @@ function Token(data) {
     return `./assets/images/${this.data.id}/${imageUrl}`
   })
   this.buyUrl = 'https://opensea.io/'
-  this.redeemUrl = 'https://guildcrypt.github.io/redemption-form/'
+  this.redeemUrl = `https://redeem.guildcrypt.com/#${this.data.id}`
   this.termsUrl = `./assets/terms/${this.data.id}.pdf`
 }
 
