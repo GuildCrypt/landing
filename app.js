@@ -20,6 +20,9 @@ function Token(data) {
   this.imageUrls = this.data.imageUrls.map((imageUrl) => {
     return `./assets/images/${this.data.id}/${imageUrl}`
   })
+  this.thumbUrls = this.data.thumbUrls.map((thumbUrl) => {
+    return `./assets/images/${this.data.id}/${thumbUrl}`
+  })
   this.buyUrl = 'https://opensea.io/'
   this.redeemUrl = `https://redeem.guildcrypt.com/#${this.data.id}`
   this.termsUrl = `./assets/terms/${this.data.id}.pdf`
@@ -33,6 +36,7 @@ const tokens = [
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
+    thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -45,6 +49,7 @@ const tokens = [
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
+    thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -57,6 +62,7 @@ const tokens = [
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
+    thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -114,7 +120,8 @@ app.directive('tokenButtons', function () {
 app.directive('images', function () {
   return {
     scope: {
-      imageUrls: '=images'
+      thumbUrls: '=thumbUrls',
+      imageUrls: '=imageUrls'
     },
     templateUrl: './templates/images.html',
     link: function ($scope) {
