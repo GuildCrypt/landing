@@ -9,6 +9,10 @@
         <p>{{token.data.description}}</p>
         <table class="table">
           <tr>
+            <td>Token Id</td>
+            <td>{{token.data.id}}</td>
+          </tr>
+          <tr>
             <td>Tokenized By</td>
             <td><a ng-click="openTokenizerModal()">{{token.tokenizer.data.name}}</a></td>
           </tr>
