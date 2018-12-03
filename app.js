@@ -31,41 +31,38 @@ function Token(data) {
 const tokens = [
   new Token({
     id: 0,
-    name: 'Black Lotus',
-    description: 'Becket Graded 9.5 Black Lotus',
+    name: 'Unlimited Black Lotus (BGS 6.0)',
+    description: 'A BGS graded 6.0 (9/6/6/6) Unlimited Black Lotus. BGS #0010945396.',
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
-    legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     watchUrl: 'http://eepurl.com/dOV-YD'
   }),
   new Token({
     id: 1,
-    name: 'Mox Jet',
-    description: 'Becket Graded 9.5 Mox Jet',
+    name: 'Beta Mox Jet (BGS 9.0)',
+    description: 'A BGS graded 9.0 (9/9/9/8.5) Unlimited Mox Jet. BGS #0010945394.',
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
-    legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     watchUrl: 'http://eepurl.com/dPaMPj'
   }),
   new Token({
     id: 2,
-    name: 'Ancestral Recall',
-    description: 'Becket Graded 9.5 Ancestral Recall',
+    name: 'Beta Mox Pearl (BGS 8.5)',
+    description: 'A BGS graded 8.5 (8/9/9/9.5) Beta Mox Pearl. BGS #0010945395.',
     tokenizerAddress: '0xPAT_LIU',
     sunsetPeriod: '90 Days',
     address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
-    legal: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     watchUrl: 'http://eepurl.com/dPaNnz'
   })
 ]
