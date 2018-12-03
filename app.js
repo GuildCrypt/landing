@@ -23,7 +23,6 @@ function Token(data) {
   this.thumbUrls = this.data.thumbUrls.map((thumbUrl) => {
     return `./assets/images/${this.data.id}/${thumbUrl}`
   })
-  this.buyUrl = 'https://opensea.io/'
   this.redeemUrl = `https://redeem.guildcrypt.com/#${this.data.id}`
   this.termsUrl = `./assets/terms/${this.data.id}.pdf`
 }
@@ -39,7 +38,8 @@ const tokens = [
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
-    watchUrl: 'http://eepurl.com/dOV-YD'
+    watchUrl: 'http://eepurl.com/dOV-YD',
+    buyUrl: 'https://opensea.io/assets/0xa0ce9055a63159995e388c01bd9a0dd7bce94e6b/0'
   }),
   new Token({
     id: 1,
@@ -51,7 +51,8 @@ const tokens = [
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
-    watchUrl: 'http://eepurl.com/dPaMPj'
+    watchUrl: 'http://eepurl.com/dPaMPj',
+    buyUrl: 'https://opensea.io/assets/0xa0ce9055a63159995e388c01bd9a0dd7bce94e6b/1'
   }),
   new Token({
     id: 2,
@@ -63,7 +64,8 @@ const tokens = [
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
-    watchUrl: 'http://eepurl.com/dPaNnz'
+    watchUrl: 'http://eepurl.com/dPaNnz',
+    buyUrl: 'https://opensea.io/assets/0xa0ce9055a63159995e388c01bd9a0dd7bce94e6b/2'
   })
 ]
 
@@ -109,8 +111,15 @@ app.directive('tokenButtons', function () {
   return {
     scope: {
       token: '=tokenButtons'
-  },
+    },
     templateUrl: './templates/token-buttons.html',
+    link: function ($scope) {
+      $scope.warnOpenSea = function($event) {
+        if (confirm('You are now being directed to OpenSea, a third party exchange not affiliated with GuildCrypt.')) {
+          window.open($scope.token.data.buyUrl)
+        }
+      }
+    }
   }
 })
 
