@@ -25,6 +25,7 @@ function Token(data) {
   })
   this.redeemUrl = `https://redeem.guildcrypt.com/#${this.data.id}`
   this.termsUrl = `./assets/terms/${this.data.id}.pdf`
+  this.trackerUrl = `https://etherscan.io/token/0xa0ce9055a63159995e388c01bd9a0dd7bce94e6b?a=${this.data.id}`
 }
 
 const tokens = [
