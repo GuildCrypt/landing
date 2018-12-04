@@ -34,7 +34,7 @@ const tokens = [
     name: 'Unlimited Black Lotus (BGS 6.0)',
     description: 'A BGS graded 6.0 (9/6/6/6) Unlimited Black Lotus. BGS #0010945396.',
     tokenizerAddress: '0xPAT_LIU',
-    sunsetPeriod: '90 Days',
+    sunsetLength: '90 Days',
     address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
@@ -47,7 +47,7 @@ const tokens = [
     name: 'Beta Mox Jet (BGS 9.0)',
     description: 'A BGS graded 9.0 (9/9/9/8.5) Unlimited Mox Jet. BGS #0010945394.',
     tokenizerAddress: '0xPAT_LIU',
-    sunsetPeriod: '90 Days',
+    sunsetLength: '90 Days',
     address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
@@ -60,7 +60,7 @@ const tokens = [
     name: 'Beta Mox Pearl (BGS 8.5)',
     description: 'A BGS graded 8.5 (8/9/9/9.5) Beta Mox Pearl. BGS #0010945395.',
     tokenizerAddress: '0xPAT_LIU',
-    sunsetPeriod: '90 Days',
+    sunsetLength: '90 Days',
     address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
@@ -87,22 +87,8 @@ app.directive('token', function (modal) {
     },
     templateUrl: './templates/token.html',
     link: function ($scope) {
-
-      $scope.openTokenizerModal = () => {
-        modal.open($scope.token.tokenizer.data.name, $scope.token.tokenizer.data.info)
-      }
-
-      $scope.openTokenLegalModal = () => {
-        modal.open(`${$scope.token.data.name} - Terms and Conditions`, $scope.token.data.legal)
-      }
-
-      $scope.startRedemption = () => {
-        getWeb3().then((web3) => {
-          alert('web3')
-        })
-      }
-      $scope.watch = () => {
-        modal.open(`${$scope.token.data.name} - Watch`, $scope.token.data.legal)
+      $scope.openSunsetExplainer = () => {
+        modal.open('Sunsets', 'Once a sunset period has been initiated, token holders will have 90 days to redeem the asset. Tokens remain tradeable between the start and end of a sunset period. You can get email alerts for sunsets by clicking the "Watch" button.')
       }
     }
   }
