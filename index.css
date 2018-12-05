@@ -39,6 +39,8 @@ footer {
 
 .navbar-brand {
   font-size: 2em;
+  line-height: 1em;
+  color: white !important;
 }
 
 .navbar-header {
@@ -244,6 +246,7 @@ footer {
   }
   .navbar-brand {
     font-size: 2em;
+    padding: 10px;
   }
   .navbar-nav > li > a {
     padding: 10px 5px;
