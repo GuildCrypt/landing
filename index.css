@@ -15,6 +15,10 @@ a:hover {
   color: white;
 }
 
+.modal a {
+  color: inherit;
+}
+
 footer {
   background-color: #3B1045;
   margin-top:30px;

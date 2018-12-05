@@ -7,7 +7,9 @@ function Tokenizer(data) {
 
 const pat = new Tokenizer({
   name: 'Pat Liu',
-  info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  info: 'Pat Liu is a L1 Judge based in central NJ, where he spends his time judging FNMs at his LGS.  His favorite format is EDH, where he has 17/32 color combinations complete.  He has recently been dabbling in Legacy and Modern as well.',
+  imageUrl: './assets/pat.jpg',
+  email: 'liupat1017@gmail.com'
 })
 
 function Token(data) {
@@ -68,15 +70,37 @@ app.directive('tokens', function () {
   }
 })
 
-app.directive('token', function (modal) {
+app.directive('token', function ($uibModal) {
   return {
     scope: {
       token: '='
     },
     templateUrl: './templates/token.html',
     link: function ($scope) {
-      $scope.openSunsetExplainer = () => {
-        modal.open('Sunsets', 'Once a sunset period has been initiated, token holders will have 90 days to redeem the asset. Tokens remain tradeable between the start and end of a sunset period. You can get email alerts for sunsets by clicking the "Watch" button.')
+      const token = $scope.token
+      $scope.openSunsetInfoModal = () => {
+        console.log('open')
+        const modalInstance = $uibModal.open({
+          templateUrl: './templates/modals/sunset-info.html',
+          size: 'md',
+          controller: function($scope) {
+            $scope.close = () => {
+              modalInstance.close()
+            }
+          }
+        })
+      }
+      $scope.openTokenizerModal = () => {
+        const modalInstance = $uibModal.open({
+          templateUrl: './templates/modals/tokenizer.html',
+          size: 'md',
+          controller: function($scope) {
+            $scope.tokenizer = token.tokenizer
+            $scope.close = () => {
+              modalInstance.close()
+            }
+          }
+        })
       }
     }
   }
@@ -108,23 +132,5 @@ app.directive('images', function () {
     link: function ($scope) {
       $scope.index = 0
     }
-  }
-})
-
-app.service('modal', function ($uibModal) {
-  this.open = function(title, body) {
-    console.log(title, body)
-    const modal = $uibModal.open({
-      templateUrl: './templates/modal.html',
-      size: 'lg',
-      controller: function($scope) {
-        $scope.title =  title
-        $scope.body = body
-        $scope.close = () => {
-          modal.close()
-        }
-      }
-    })
-    return modal
   }
 })
