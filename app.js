@@ -1,22 +1,18 @@
 const app = angular.module('app', ['ui.bootstrap'])
+const contractAddressHex = 'a307b905140c82b37f2d7d806ef9d8858d30ac87'
 
 function Tokenizer(data) {
   this.data = data
 }
 
-const tokenizers = [
-  new Tokenizer({
-    address: '0xPAT_LIU',
-    name: 'Pat Liu',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  })
-]
+const pat = new Tokenizer({
+  name: 'Pat Liu',
+  info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+})
 
 function Token(data) {
   this.data = data
-  this.tokenizer = _.find(tokenizers, (tokenizer) => {
-    return tokenizer.data.address == data.tokenizerAddress
-  })
+  this.tokenizer = pat
   this.imageUrls = this.data.imageUrls.map((imageUrl) => {
     return `./assets/images/${this.data.id}/${imageUrl}`
   })
@@ -25,7 +21,8 @@ function Token(data) {
   })
   this.redeemUrl = `https://redeem.guildcrypt.com/#${this.data.id}`
   this.termsUrl = `./assets/terms/${this.data.id}.pdf`
-  this.trackerUrl = `https://etherscan.io/token/0xa0ce9055a63159995e388c01bd9a0dd7bce94e6b?a=${this.data.id}`
+  this.trackerUrl = `https://etherscan.io/token/0x${contractAddressHex}?a=${this.data.id}`
+  this.buyUrl = `https://opensea.io/assets/0x${contractAddressHex}/${this.data.id}`
 }
 
 const tokens = [
@@ -33,40 +30,31 @@ const tokens = [
     id: 0,
     name: 'Unlimited Black Lotus (BGS 6.0)',
     description: 'A BGS graded 6.0 (9/6/6/6) Unlimited Black Lotus. BGS #0010945396.',
-    tokenizerAddress: '0xPAT_LIU',
     sunsetLength: '90 Days',
-    address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     watchUrl: 'http://eepurl.com/dOV-YD',
-    buyUrl: 'https://opensea.io/assets/0xa0ce9055a63159995e388c01bd9a0dd7bce94e6b/0'
   }),
   new Token({
     id: 1,
     name: 'Beta Mox Jet (BGS 9.0)',
     description: 'A BGS graded 9.0 (9/9/9/8.5) Unlimited Mox Jet. BGS #0010945394.',
-    tokenizerAddress: '0xPAT_LIU',
     sunsetLength: '90 Days',
-    address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     watchUrl: 'http://eepurl.com/dPaMPj',
-    buyUrl: 'https://opensea.io/assets/0xa0ce9055a63159995e388c01bd9a0dd7bce94e6b/1'
   }),
   new Token({
     id: 2,
     name: 'Beta Mox Pearl (BGS 8.5)',
     description: 'A BGS graded 8.5 (8/9/9/9.5) Beta Mox Pearl. BGS #0010945395.',
-    tokenizerAddress: '0xPAT_LIU',
     sunsetLength: '90 Days',
-    address: '0xaddress',
     thumbUrls: ['front.thumb.jpg', 'back.thumb.jpg'],
     imageUrls: ['front.jpg', 'back.jpg'],
     redemptionMethod: 'In store pickup; $10 Redemption Fee',
     watchUrl: 'http://eepurl.com/dPaNnz',
-    buyUrl: 'https://opensea.io/assets/0xa0ce9055a63159995e388c01bd9a0dd7bce94e6b/2'
   })
 ]
 
@@ -101,9 +89,9 @@ app.directive('tokenButtons', function () {
     },
     templateUrl: './templates/token-buttons.html',
     link: function ($scope) {
-      $scope.warnOpenSea = function($event) {
+      $scope.buy = function($event) {
         if (confirm('You are now being directed to OpenSea, a third party exchange not affiliated with GuildCrypt.')) {
-          window.open($scope.token.data.buyUrl)
+          window.open($scope.token.buyUrl)
         }
       }
     }
