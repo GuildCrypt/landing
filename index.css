@@ -156,11 +156,6 @@ footer {
   border-top: 0;
 }
 
-.token .table td:first-child{
-  width: 200px;
-}
-
-
 .btn {
   position: relative;
   padding: 10px 30px;
@@ -230,6 +225,12 @@ footer {
 @media (max-width: 1200px) {
   body {
     background-color: #290B32;
+  }
+}
+
+@media(min-width: 768px) {
+  .token .table td:first-child{
+    width: 200px;
   }
 }
 
