@@ -152,6 +152,11 @@ footer {
   border-top: 0;
 }
 
+.token .table td:first-child{
+  width: 200px;
+}
+
+
 .btn {
   position: relative;
   padding: 10px 30px;
